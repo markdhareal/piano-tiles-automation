@@ -17,12 +17,11 @@ def left_click(x,y):
     # LEFT CLICK
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
     # DELAY
-    time.sleep(0.01)
+    time.sleep(0.1)
     # LEFT CLICK RELEASE
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0,0)
 
 def main():
-    time.sleep(5)
     while not keyboard.is_pressed('q'):
         if pyautogui.pixel(435,564)[0] == 0:
             left_click(435,564)
@@ -32,3 +31,6 @@ def main():
             left_click(690,564)
         if pyautogui.pixel(817,564)[0] == 0:
             left_click(817,564)
+
+if __name__ == '__main__':
+    main()
